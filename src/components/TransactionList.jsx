@@ -2,7 +2,7 @@ import React from "react";
 
 function TransactionList() {
   return (
-    <div>
+    <>
       <h3>History</h3>
       <ul id="list" className="list">
         <li className="minus">
@@ -10,7 +10,7 @@ function TransactionList() {
           <button className="delete-btn">X</button>
         </li>
       </ul>
-    </div>
+    </>
   );
 }
 
