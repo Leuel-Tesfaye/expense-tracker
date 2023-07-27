@@ -30,6 +30,7 @@ function AddTransaction() {
             placeholder="Enter amount...."
           />
         </div>
+        <button className="btn">Add Transaction</button>
       </form>
     </>
   );
