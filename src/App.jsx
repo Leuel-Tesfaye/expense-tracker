@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from './components/Header'
 // import './App.css'
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Testing react app</h1>
+        <Header/> 
       </div>
     </>
   )
