@@ -11,11 +11,20 @@ const initialState = {
   ],
 };
 
+//create a context
 export const GlobalContext = createContext(initialState);
 
+// provider component
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
+  // actions
+  const deleteTransaction = (id) => {
+    dispatch({
+      type: "DELETE_TRANSACTION",
+      payload: id,
+    });
+  };
   // Include any other state properties that you want to share with child components
   // In this case, we are including the 'transactions' property from the state.
   const contextValue = {
