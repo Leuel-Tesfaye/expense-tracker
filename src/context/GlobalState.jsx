@@ -25,11 +25,19 @@ export const GlobalProvider = ({ children }) => {
       payload: id,
     });
   };
+
+  const addTransaction = (transaction) => {
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: transaction,
+    });
+  };
   // Include any other state properties that you want to share with child components
   // In this case, we are including the 'transactions' property from the state.
   const contextValue = {
     transactions: state.transactions,
     deleteTransaction,
+    addTransaction,
   };
 
   return (
