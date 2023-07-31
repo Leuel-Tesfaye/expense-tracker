@@ -162,6 +162,11 @@ input[type='number'] {
     width: 90%;
     max-width: 90%;
   }
+  .scroll-container {
+    overflow: auto;
+    height: 100vh; /* Set a height to allow scrolling */
+    /* Add any other necessary styles */
+  }
 }
 
 @media (max-width: 480px) {
