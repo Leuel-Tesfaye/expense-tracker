@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 function AddTransaction() {
@@ -6,25 +6,6 @@ function AddTransaction() {
   const [amount, setAmount] = useState(0);
 
   const { addTransaction } = useContext(GlobalContext);
-
-  // useEffect to retrieve data from local storage when the component mounts
-  useEffect(() => {
-    const storedTransactions = JSON.parse(localStorage.getItem("transactions"));
-    if (storedTransactions) {
-      addTransaction(storedTransactions);
-    }
-  }, []); // Empty dependency array to run this effect only once when the component mounts
-
-  // Function to add a new transaction
-  const addNewTransaction = (newTransaction) => {
-    addTransaction(newTransaction);
-
-    // Save the updated transactions to local storage
-    localStorage.setItem(
-      "transactions",
-      JSON.stringify([...addTransaction, newTransaction])
-    );
-  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -34,7 +15,7 @@ function AddTransaction() {
       amount: +amount,
     };
 
-    addNewTransaction(newTransaction);
+    addTransaction(newTransaction);
 
     // Reset form fields after adding the transaction
     setText("");
