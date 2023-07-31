@@ -29,6 +29,7 @@ export const GlobalProvider = ({ children }) => {
   // In this case, we are including the 'transactions' property from the state.
   const contextValue = {
     transactions: state.transactions,
+    deleteTransaction,
   };
 
   return (
